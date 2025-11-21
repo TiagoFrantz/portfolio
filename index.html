@@ -1,257 +1,195 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="arquivos/tiagoFrantz_logotipo.png"
-    />
-    <link rel="stylesheet" href="style.css" />
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiago Frantz | Desenvolvedor C#</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
-      rel="stylesheet"
-    />
+    <style>
+        /* Reset e Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <title>Home - Tiago Frantz</title>
-  </head>
-  <body>
-    <header>
-      <div class="logo">
-        <a href="index.html">
-          Tiago
-          <span>Frantz</span>
-        </a>
-      </div>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #121212; /* Fundo Dark Minimalista */
+            color: #e0e0e0;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
 
-      <nav>
-        <button class="fecharMenu">
-          <img src="arquivos/icons/fechar.png" alt="Feechar">
-        </button>
-        <ul>
-          <li><a href="#sobreMim">Sobre</a></li>
-          <li><a href="#contato">Contato</a></li>
-          <li><a href="#contato">Redes</a></li>
-        </ul>
-      </nav>
+        /* Container Principal */
+        .container {
+            max-width: 700px;
+            width: 100%;
+            text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
+        }
 
-      <button class="menuButton">
-        <div></div>
-        <div></div>
-        <div></div>
-      </button>
-    </header>
+        /* Header */
+        header {
+            margin-bottom: 40px;
+        }
 
-    <main>
-      <div class="mainLeft">
-        <img class="no-drag" src="arquivos/backHome.jpg" alt="Perfil" />
-        <p>Tiago Frantz</p>
-        <div class="redes">
-          <div class="rede" style="background-color: rgb(120, 120, 120);">
-            <a href="https://github.com/TiagoFrantz" target="_blank">
-              <img
-                src="arquivos/icons/github-logo.png"
-                alt="GitHub Logo"
-                class="redeIcon no-drag"
-              />
-            </a>
-          </div>
-          <div class="rede" style="background-color: #0b66c3;">
-            <a
-              style="padding: 5px; box-sizing: border-box;"
-              href="https://www.linkedin.com/in/tiago-frantz-0963b0316/"
-              target="_blank"
-            >
-              <img
-                src="arquivos/icons/linkedin-in.512x512.png"
-                alt=""
-                class="redeIcon no-drag"
-              />
-            </a>
-          </div>
-          <div
-            class="rede"
-            style="margin-right: 0; background-color: rgb(120, 120, 120);"
-          >
-            <a href="mailto:tiagofrantz@gmail.com" target="_blank">
-              <img
-                src="arquivos/icons/email.512x410.png"
-                alt=""
-                class="redeIcon no-drag"
-              />
-            </a>
-          </div>
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #ffffff;
+            letter-spacing: -1px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #a1a1aa;
+            font-weight: 300;
+        }
+
+        /* Seção Sobre */
+        .about-text {
+            font-size: 1rem;
+            color: #d4d4d8;
+            margin-bottom: 40px;
+            font-weight: 300;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Grid de Skills */
+        .skills-section {
+            margin-bottom: 50px;
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .skill-tag {
+            background: #1f1f22; /* Card sutil */
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            border: 1px solid #333;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .skill-tag:hover {
+            border-color: #fff;
+            transform: translateY(-2px);
+            background: #27272a;
+        }
+
+        .skill-tag i {
+            color: #fff; /* Ícones brancos */
+        }
+
+        /* Botões de Contato */
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.5rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn:hover {
+            color: #a1a1aa;
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 60px;
+            font-size: 0.8rem;
+            color: #52525b;
+        }
+
+        /* Animação simples */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsividade */
+        @media (max-width: 480px) {
+            h1 { font-size: 2rem; }
+            .about-text { font-size: 0.95rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="container">
+        
+        <header>
+            <div style="font-size: 3rem; margin-bottom: 15px; color: white;">
+                <i class="fa-solid fa-code"></i>
+            </div>
+            <h1>Tiago Frantz</h1>
+            <p class="subtitle">Desenvolvedor C# & .NET</p>
+        </header>
+
+        <section class="about-text">
+            <p>
+                Desenvolvedor C# com sólida experiência em <strong>.NET, ASP.NET Core MVC, Entity Framework e SQL</strong>. 
+                Especialista em integração e manipulação de dados no <strong>Microsoft Dataverse</strong>.
+            </p>
+            <br>
+            <p>
+                Foco no desenvolvimento de APIs RESTful e aplicação de padrões de projeto robustos. 
+                Possuo também conhecimentos em JavaScript, HTML5 e CSS3, garantindo uma integração fluida entre Front-end e Back-end.
+            </p>
+        </section>
+
+        <section class="skills-section">
+            <div class="skills-grid">
+                <div class="skill-tag"><i class="fa-brands fa-microsoft"></i> .NET Core</div>
+                <div class="skill-tag"><i class="fa-solid fa-c"></i> C#</div>
+                <div class="skill-tag"><i class="fa-solid fa-database"></i> SQL & EF</div>
+                <div class="skill-tag"><i class="fa-solid fa-cloud"></i> Dataverse</div>
+                <div class="skill-tag"><i class="fa-solid fa-server"></i> APIs RESTful</div>
+                <div class="skill-tag"><i class="fa-brands fa-js"></i> JavaScript</div>
+                <div class="skill-tag"><i class="fa-brands fa-html5"></i> HTML5 & CSS3</div>
+            </div>
+        </section>
+
+        <div class="links">
+            <a href="https://www.linkedin.com/in/tiago-frantz-0963b0316/" class="btn" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/TiagoFrantz" class="btn" title="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="mailto:tiagofrantz688@gmail.com" class="btn" title="Email"><i class="fa-solid fa-envelope"></i></a>
         </div>
-      </div>
 
-      <div class="mainRight">
-        <div class="textos">
-          <h2>opa</h2>
-          <h2 id="souDesenvolvedor" style="padding-left: 30px; font-size: 45px;">
-            sou um Desenvolvedor C#
-          </h2>
-          <h3>além disso, desenvolvo jogos</h3>
-          <a href="#projetos" class="mainRightButton">
-            veja meus projetos
-            <img src="arquivos/seta-direita.png" alt="Seta" />
-          </a>
-        </div>
-      </div>
+        <footer>
+            2025 Tiago Frantz. 
+        </footer>
+
     </main>
 
-    <section id="projetos">
-      <h2 class="projetosTitle">projetos</h2>
-      <div class="projetosContent">
-        <div class="projetoItem">
-          <img
-            src="arquivos/Logo SchoolTeachSim 512x512 semfundio (2).png"
-            alt=""
-            class="projetoImage"
-          />
-          <h2>School TeachSim</h2>
-          <p>
-            Jogo que simula a vida de um professor. A construção do jogo
-            envolve, principalmente, a manipulação de objetos em C#. O jogo foi
-            feito na ferramenta Unity e está disponível na Google Play.
-          </p>
-          <div class="areaButton">
-            <a
-              href="https://maracujagamessstudio.github.io/sites/schoolteachsim/ptBR/index.html"
-              target="_blank"
-            >
-              ver
-            </a>
-          </div>
-        </div>
-        <div class="projetoItem">
-          <img
-            src="arquivos/icons/aeroclubemanagerlogo.png"
-            alt=""
-            class="projetoImage"
-          />
-          <h2>Aeroclube Manager</h2>
-          <p>
-           [Em desenvolvimento] <br>
-           AeroclubeManager é uma aplicação MVC desenvolvida em ASP.NET Core para gerenciar aeroclubes. O sistema inclui gerenciamento de usuários, aeronaves, escolas de aviação e voos. Utiliza Entity Framework Core para acesso ao banco de dados.
-
-          </p>
-          <div class="areaButton">
-            <a
-              href="https://github.com/TiagoFrantz/AeroclubeManager"
-              target="_blank"
-            >
-              ver
-            </a>
-          </div>
-        </div>
-        
-    </section>
-
-    <section id="tecnologias">
-      <h2>tecnologias</h2>
-        <div class="tecLista">
-            <div class="tecnologia">
-                <img src="arquivos/icons/C_Sharp_Logo_2023.svg.png" alt="Csharp">
-                <span>C#</span>
-            </div>
-            <div class="tecnologia">
-              <img src="arquivos/icons/Microsoft_.NET_logo.svg" alt=".NET">
-              <span>.NET</span>
-          </div>  
-          
-          <div class="tecnologia">
-            <img src="arquivos/icons/ASP.NET_logo.avif" alt="ASP.NET">
-            <span>ASP.NET Core</span>
-        </div> 
-            <div class="tecnologia">
-                <img src="arquivos/icons/html.png" alt="HTML">
-                <span>HTML</span>
-            </div>
-            <div class="tecnologia">
-              <img src="arquivos/icons/css-3.svg" alt="CSS">
-              <span>CSS</span>
-          </div>
-          <div class="tecnologia">
-            <img src="arquivos/icons/Unofficial_JavaScript_logo_2.svg.png" alt="JS">
-            <span>Javascript</span>
-        </div>
-            <div class="tecnologia">
-                <img src="arquivos/icons/sqlservericon.png" alt="SQL">
-                <span>SQL Server</span>
-            </div>        
-            <div class="tecnologia">
-              <img src="arquivos/icons/unity-icon-512x512-kdsx9w7b.png" alt="Unity">
-              <span>Unity</span>
-          </div>      
-        </div>
-    </section>
-
-    <section id="linguagens">
-      <p>I speak a bit of English</p>
-      <img src="arquivos/icons/bandeiraUSa.png" alt="Estados Unidos">
-    </section>
-
-    <setion id="sobreMim">
-      <h2>sobre mim</h2>
-      <div class="sobre">
-      <p>Tenho 15 anos, sou gaúcho e programador. Por enquanto, estou <b>estudando no 1° ano </b>do Ensino Médio.</p>
-      <p>Desde 2022 procurei conhecer o mundo da programação: me apaixonei.</p>
-      <p>Sempre foi minha vontade conhecer como as coisas funcionam. Comecei estudando JS, HTML e CSS (como todo estudante kk).</p>
-      <p>Após um tempo, me interessei em criar jogos, um sonho desde minha infância. Instalei a Unity e comecei a desenvolver em C# e... <b>amei a programação orientada a objetos.</b></p>
-    <p>Por enquanto, continuo desenvolvendo jogos na Unity.</p>
-    </div>
-
-    <div id="contato" class="sobreRedes">
-
-      <div class="sobreRede">
-        <a href="https://github.com/TiagoFrantz" target="_blank">
-        <img src="arquivos/icons/github-logo.png" alt="Github">
-        <span>GitHub</span>
-      </a>
-      </div>
-
-      <div class="sobreRede">
-        <a href="www.linkedin.com/in/tiago-frantz-0963b0316" target="_blank">
-        <img src="arquivos/icons/linkedinlogo2.png" alt="Github">
-        <span>Linkedin</span>
-      </a>
-      </div>
-
-      <div class="sobreRede">
-        <a href="mailto:tiagofrantz688@gmail.com" target="_blank">
-        <img src="arquivos/icons/email.512x410.png" alt="Github">
-        <span>tiagofrantz688@gmail.com</span>
-      </a>
-      </div>
-
-    </div>
-    </setion>
-
-    <script>
-      var botaoAbrir = document.querySelector(".menuButton");
-      var botaoFechar = document.querySelector(".fecharMenu");
-      var panelNav = document.querySelector("nav");
-
-      botaoAbrir.addEventListener("click", ()=>{
-        console.log("k");
-        abrirPainel();
-      });
-
-      function abrirPainel()
-      {
-        panelNav.classList.add("open");
-
-      }
-
-      botaoFechar.addEventListener("click", ()=>{
-        panelNav.classList.remove("open");
-      });
-
-
-    </script>
-  </body>
+</body>
 </html>
