@@ -29,6 +29,14 @@
             align-items: center;
             min-height: 100vh;
             padding: 20px;
+        }.profile-img {
+            width: 90px; /* Tamanho pequeno */
+            height: 90px;
+            border-radius: 50%; /* Formato circular */
+            border: 2px solid #333; /* Borda sutil para separar do fundo */
+            margin-bottom: 20px;
+            object-fit: cover;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Sombra leve */
         }
 
         /* Container Principal */
@@ -148,9 +156,7 @@
     <main class="container">
         
         <header>
-            <div style="font-size: 3rem; margin-bottom: 15px; color: white;">
-                <i class="fa-solid fa-code"></i>
-            </div>
+           <img src="https://avatars.githubusercontent.com/u/174841670?v=4" alt="Foto de Perfil Tiago Frantz" class="profile-img">
             <h1>Tiago Frantz</h1>
             <p class="subtitle">Desenvolvedor C# & .NET</p>
         </header>
@@ -186,7 +192,7 @@
         </div>
 
         <footer>
-            2025 Tiago Frantz. 
+           <i class="fa-solid fa-code"></i> 2025 Tiago Frantz. 
         </footer>
 
     </main>
